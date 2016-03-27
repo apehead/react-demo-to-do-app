@@ -13,7 +13,7 @@ var App = React.createClass({
 
     getInitialState: function () {
         return {
-            items: {},
+            items: null,
             loaded: false
         };
     },
@@ -38,7 +38,7 @@ var App = React.createClass({
     },
 
     deleteButton: function () {
-        if (!this.state.loaded) {
+        if (!this.state.loaded || !this.state.items) {
             return null;
         } else {
             return <div className="text-center clear-complete">
